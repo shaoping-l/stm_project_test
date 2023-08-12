@@ -1,0 +1,5 @@
+../Core/Inc/pusher.h:19:7:PUSHER::PUSHER()	16	static
+../Core/Src/pusher.cpp:11:6:void PUSHER::distence()	16	static
+../Core/Src/pusher.cpp:14:6:void PUSHER::pusher_move()	16	static
+../Core/Src/pusher.cpp:34:1:void __static_initialization_and_destruction_0(int, int)	16	static
+../Core/Src/pusher.cpp:34:1:cpp)	8	static
