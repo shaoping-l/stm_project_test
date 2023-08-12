@@ -22,6 +22,7 @@ public:
 	double state =0;
 	double p_state =0;
 	double d =0;
+	double a= 0;
 //	void pusher_down();
 //	void pusher_up();
 	void pusher_move();
