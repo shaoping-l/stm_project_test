@@ -1,0 +1,6 @@
+../Core/Src/chassis_DCmotor.cpp:25:6:void DC_motor_init()	8	static
+../Core/Src/chassis_DCmotor.cpp:45:1:DC_motor::DC_motor(double, double, double, double, double, double)	64	static
+../Core/Src/chassis_DCmotor.cpp:54:8:double DC_motor::encoder(TIM_HandleTypeDef*)	16	static
+../Core/Src/chassis_DCmotor.cpp:59:5:int DC_motor::PID_PWM_Convertor(double, double)	32	static
+../Core/Src/chassis_DCmotor.cpp:75:1:void __static_initialization_and_destruction_0(int, int)	16	static
+../Core/Src/chassis_DCmotor.cpp:75:1:cpp)	8	static

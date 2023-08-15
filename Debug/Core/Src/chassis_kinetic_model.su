@@ -1,0 +1,4 @@
+../Core/Src/chassis_kinetic_model.cpp:14:6:void Mecanum_O::inverse_kinetics(double*, double*, double*, double*)	24	static
+../Core/Src/chassis_kinetic_model.cpp:20:6:void Mecanum_O::forward_kinetics(double*, double*, double*, double*)	24	static
+../Core/Src/chassis_kinetic_model.cpp:27:6:void Mecanum_X::inverse_kinetics(double*, double*, double*, double*)	24	static
+../Core/Src/chassis_kinetic_model.cpp:33:6:void Mecanum_X::forward_kinetics(double*, double*, double*, double*)	24	static

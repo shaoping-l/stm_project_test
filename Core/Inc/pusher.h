@@ -14,6 +14,22 @@
 #define PUSHER_A_IN1_PIN GPIO_PIN_9
 #define PUSHER_A_IN2_PORT GPIOE
 #define PUSHER_A_IN2_PIN GPIO_PIN_11
+
+#define PUSHER_B_IN1_PORT GPIOE
+#define PUSHER_B_IN1_PIN GPIO_PIN_14
+#define PUSHER_B_IN2_PORT GPIOE
+#define PUSHER_B_IN2_PIN GPIO_PIN_13
+
+#define PUSHER_C_IN1_PORT GPIOB
+#define PUSHER_C_IN1_PIN GPIO_PIN_6
+#define PUSHER_C_IN2_PORT GPIOB
+#define PUSHER_C_IN2_PIN GPIO_PIN_7
+
+#define PUSHER_D_IN1_PORT GPIOE
+#define PUSHER_D_IN1_PIN GPIO_PIN_7
+#define PUSHER_D_IN2_PORT GPIOE
+#define PUSHER_D_IN2_PIN GPIO_PIN_8
+
 #define PUSHER_SPEED 33.6
 
 class PUSHER{
@@ -22,7 +38,7 @@ public:
 	double state =0;
 	double p_state =0;
 	double d =0;
-	double a= 0;
+	int a =0;
 //	void pusher_down();
 //	void pusher_up();
 	void pusher_move();
