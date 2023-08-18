@@ -8,8 +8,9 @@
 #include "pusher.h"
 #include "chassis_DCmotor.h"
 #include "stm32h7xx_hal.h"
-
+#include "script.h"
 int b=0;
+int scriptrun =0;
 
 extern TIM_HandleTypeDef htim1;
 void main_function(){
@@ -17,9 +18,9 @@ void main_function(){
 	PUSHER pusher_B;
 	PUSHER pusher_C;
 	PUSHER pusher_D;
-
 	stm_setup();
 	while(1){
+		script();
 		pusher_A.distence();
 		pusher_A.pusher_move();
 		pusher_B.distence();

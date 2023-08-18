@@ -11,24 +11,24 @@
 
 /*pusher test*/
 #define PUSHER_A_IN1_PORT GPIOE
-#define PUSHER_A_IN1_PIN GPIO_PIN_9
+#define PUSHER_A_IN1_PIN GPIO_PIN_15
 #define PUSHER_A_IN2_PORT GPIOE
-#define PUSHER_A_IN2_PIN GPIO_PIN_11
+#define PUSHER_A_IN2_PIN GPIO_PIN_10
 
 #define PUSHER_B_IN1_PORT GPIOE
-#define PUSHER_B_IN1_PIN GPIO_PIN_14
+#define PUSHER_B_IN1_PIN GPIO_PIN_9
 #define PUSHER_B_IN2_PORT GPIOE
-#define PUSHER_B_IN2_PIN GPIO_PIN_13
+#define PUSHER_B_IN2_PIN GPIO_PIN_8
 
-#define PUSHER_C_IN1_PORT GPIOB
-#define PUSHER_C_IN1_PIN GPIO_PIN_6
-#define PUSHER_C_IN2_PORT GPIOB
-#define PUSHER_C_IN2_PIN GPIO_PIN_7
+#define PUSHER_C_IN1_PORT GPIOE
+#define PUSHER_C_IN1_PIN GPIO_PIN_7
+#define PUSHER_C_IN2_PORT GPIOG
+#define PUSHER_C_IN2_PIN GPIO_PIN_1
 
-#define PUSHER_D_IN1_PORT GPIOE
-#define PUSHER_D_IN1_PIN GPIO_PIN_7
-#define PUSHER_D_IN2_PORT GPIOE
-#define PUSHER_D_IN2_PIN GPIO_PIN_8
+#define PUSHER_D_IN1_PORT GPIOG
+#define PUSHER_D_IN1_PIN GPIO_PIN_0
+#define PUSHER_D_IN2_PORT GPIOF
+#define PUSHER_D_IN2_PIN GPIO_PIN_15
 
 #define PUSHER_SPEED 33.6
 
@@ -44,6 +44,7 @@ public:
 	void pusher_move();
 	void distence();
 	void pusher_reset();
+	void script_pusher(double hight_a,double hight_b,double hight_c,double hight_d);
 private: //encapsulation 封裝
 	int _state;
 };

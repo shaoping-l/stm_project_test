@@ -11,7 +11,15 @@ PUSHER pusher_B;
 PUSHER pusher_C;
 PUSHER pusher_D;
 
+void script_pusher(double hight_a,double hight_b,double hight_c,double hight_d){
+	pusher_A.state = hight_a;
+	pusher_B.state = hight_b;
+	pusher_C.state = hight_c;
+	pusher_D.state = hight_d;
+}
+
 void PUSHER::distence(){
+
 	pusher_A.d = (pusher_A.state - pusher_A.p_state)*10;
 	pusher_B.d = (pusher_B.state - pusher_B.p_state)*10;
 	pusher_C.d = (pusher_C.state - pusher_C.p_state)*10;

@@ -34,12 +34,13 @@ extern TIM_HandleTypeDef htim3;
 #define BR_INB_PIN GPIO_PIN_3
 //VNH5019_4
 extern TIM_HandleTypeDef htim4;
-#define FR_INA_PORT GPIOE
-#define FR_INA_PIN GPIO_PIN_4
-#define FR_INB_PORT GPIOC
-#define FR_INB_PIN GPIO_PIN_13
+#define FR_INA_PORT GPIOC
+#define FR_INA_PIN GPIO_PIN_13
+#define FR_INB_PORT GPIOE
+#define FR_INB_PIN GPIO_PIN_4
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
-int a=0;
+
+double Vx = 0, Vy = 0, W, rVx, rVy, rW;
 
 #endif /* INC_TIM_IT_H_ */
