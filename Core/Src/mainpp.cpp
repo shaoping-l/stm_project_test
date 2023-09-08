@@ -17,14 +17,16 @@ extern SCRIPT script_a;
 extern TIM_HandleTypeDef htim1;
 extern TIM_HandleTypeDef htim8;
 extern TIM_HandleTypeDef htim23;
+
+void setup(void);
 void main_function(){
 	PUSHER pusher_A;
 	PUSHER pusher_B;
 //	PUSHER pusher_C;
 //	PUSHER pusher_D;
 //	SCRIPT script_a;
+	setup();
 	stm_setup();
-	ros_setup();
 	script_a.scriptrun = 1;
 	while(1){
 		pusher_A.distence();
@@ -40,11 +42,16 @@ void stm_setup(void){
 	HAL_TIM_Base_Start_IT(&htim23);//main Timer
 	DC_motor_init();
 }
-void ros_setup(void){
-	setup();
+
+int count;
+
+void callback(const std_msgs::Int64 &msg)
+{
+   count = msg.data;
 }
 
-
+ros::NodeHandle nh;
+ros::Subscriber<std_msgs::Int64> sub("counting", callback);
 
 
 /* UART Communication */

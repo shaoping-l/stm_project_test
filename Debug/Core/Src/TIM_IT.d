@@ -29,6 +29,8 @@ Core/Src/TIM_IT.o: ../Core/Src/TIM_IT.cpp ../Core/Inc/TIM_IT.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
+ ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
+ ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
  ../Core/Inc/chassis_DCmotor.h ../Core/Inc/chassis_kinetic_model.h \
  ../Core/Inc/PID.h ../Core/Inc/mainpp.h ../Core/Inc/pusher.h \
  ../Core/Inc/script.h
@@ -63,6 +65,8 @@ Core/Src/TIM_IT.o: ../Core/Src/TIM_IT.cpp ../Core/Inc/TIM_IT.h \
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h:
+../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h:
+../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
 ../Core/Inc/chassis_DCmotor.h:
 ../Core/Inc/chassis_kinetic_model.h:
 ../Core/Inc/PID.h:
