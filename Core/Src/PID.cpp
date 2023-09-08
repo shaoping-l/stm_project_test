@@ -1,8 +1,8 @@
 # include "PID.h"
 #define PI 3.14159265751
 
-const double Kp[] = {24.1828, 32.61893, 15.9656, 21.19553};
-const double Ki[] = {91.6881, 77.45069, 31.71748, 50.08697};
+const double Kp[] = {24.1828, 122.43549883041, 44.848906942949, 28.4469185683798};
+const double Ki[] = {91.6881, 125.322173658221, 33.7612944464254, 35.8188176931768};
 const double Kd[] = {0, 0, 0, 0};
 KPID Kpid[4] = {
     {Kp[0], Ki[0], Kd[0], 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0},
@@ -13,7 +13,7 @@ KPID Kpid[4] = {
 
 void pidCtrl(int i){
 	Kpid[i].insVel = (double) Kpid[i].enc * PI * Dwheel
-			/ (4 * resolution * reduction_ratio) * frequency;
+			/ (4 * resolution * reduction_ratio * belt_ratio) * frequency;
 	Kpid[i].error = Kpid[i].goalVel - Kpid[i].insVel;
 	Kpid[i].up = Kpid[i].Kp * Kpid[i].error;
 	Kpid[i].ui += Kpid[i].Ki * Kpid[i].last_error / frequency;

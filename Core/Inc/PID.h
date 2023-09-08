@@ -10,14 +10,15 @@ extern "C"
 {
 #endif
 
-#define frequency 1000
+#define frequency 500
 #define resolution 512
 #define reduction_ratio 216
+#define belt_ratio 0.5
 #define max_ui 1
 #define PWM_ARR 1000
-#define Dwheel 0.129		//wheelDiameter
-#define width 0.48
-#define length 0.415
+#define Dwheel 12.9		//wheelDiameter_cm
+#define width 48		//cm
+#define length 41.5		//cm
 
 typedef struct{
 	const double Kp;
