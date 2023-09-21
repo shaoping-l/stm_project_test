@@ -10,20 +10,20 @@ extern "C"
 {
 #endif
 
-#define frequency 500
+#define frequency 250
 #define resolution 512
 #define reduction_ratio 216
 #define belt_ratio 0.5
 #define max_ui 1
-#define PWM_ARR 1000
+#define PWM_ARR 999
 #define Dwheel 12.9		//wheelDiameter_cm
 #define width 48		//cm
 #define length 41.5		//cm
 
 typedef struct{
-	const double Kp;
-	const double Ki;
-	const double Kd;
+	double Kp;
+	double Ki;
+	double Kd;
 	int16_t enc;
 	double goalVel;		//m/s
 	double insVel;		//m/s

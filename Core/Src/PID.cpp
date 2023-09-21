@@ -1,9 +1,9 @@
 # include "PID.h"
 #define PI 3.14159265751
 
-const double Kp[] = {24.1828, 122.43549883041, 44.848906942949, 28.4469185683798};
-const double Ki[] = {91.6881, 125.322173658221, 33.7612944464254, 35.8188176931768};
-const double Kd[] = {0, 0, 0, 0};
+double Kp[] = {0.1, 0.1, 0.1, 0.1};
+double Ki[] = {0.5, 0.5, 0.5, 0.5};
+double Kd[] = {0, 0, 0, 0};
 KPID Kpid[4] = {
     {Kp[0], Ki[0], Kd[0], 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0},
     {Kp[1], Ki[1], Kd[1], 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0},
@@ -17,7 +17,7 @@ void pidCtrl(int i){
 	Kpid[i].error = Kpid[i].goalVel - Kpid[i].insVel;
 	Kpid[i].up = Kpid[i].Kp * Kpid[i].error;
 	Kpid[i].ui += Kpid[i].Ki * Kpid[i].last_error / frequency;
-	Kpid[i].ui = 0;
+//	Kpid[i].ui = 0;
 	Kpid[i].ud = Kpid[i].Kd * (Kpid[i].error - Kpid[i].last_error) * frequency;
 	if( fabs(Kpid[i].ui) > max_ui )
 		Kpid[i].ui = (Kpid[i].ui >= 0)? max_ui: -1*max_ui;

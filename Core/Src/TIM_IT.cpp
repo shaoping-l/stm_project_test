@@ -23,14 +23,15 @@ extern PUSHER pusher_A;
 extern PUSHER pusher_B;
 extern PUSHER pusher_C;
 extern PUSHER pusher_D;
+double corr_vy = (double)100/94;
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim->Instance == TIM1){
 
-		Kpid[0].goalVel = Vx + Vy + (W * coeffab);
-		Kpid[1].goalVel = Vx - Vy - (W * coeffab);
-		Kpid[2].goalVel = Vx + Vy - (W * coeffab);
-		Kpid[3].goalVel = Vx - Vy + (W * coeffab);
+		Kpid[0].goalVel = Vx + Vy * corr_vy + (W * coeffab);
+		Kpid[1].goalVel = Vx - Vy * corr_vy - (W * coeffab);
+		Kpid[2].goalVel = Vx + Vy * corr_vy - (W * coeffab);
+		Kpid[3].goalVel = Vx - Vy * corr_vy + (W * coeffab);
 
 		Kpid[0].enc = __HAL_TIM_GetCounter(FR_ENC);
 		Kpid[1].enc = __HAL_TIM_GetCounter(FL_ENC);
@@ -166,6 +167,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim->Instance == TIM23){/*for script*/
 		if(delay_start!=0){
 			delay++;
+		}
+		if(delay_start_2!=0){
+			delay_2++;
 		}
 
 

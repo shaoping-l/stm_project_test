@@ -10,7 +10,7 @@
 #include "stm32h7xx_hal.h"
 #include "script.h"
 #include "ros.h"
-#include "std_msgs/Int64.h"
+#include "geometry_msgs/Twist.h"
 #include "STM32Hardware.h"
 
 extern SCRIPT script_a;
@@ -18,8 +18,11 @@ extern TIM_HandleTypeDef htim1;
 extern TIM_HandleTypeDef htim8;
 extern TIM_HandleTypeDef htim23;
 
+int aaaaa = 0;
+
 void setup(void);
 void main_function(){
+
 	PUSHER pusher_A;
 	PUSHER pusher_B;
 //	PUSHER pusher_C;
@@ -27,8 +30,13 @@ void main_function(){
 //	SCRIPT script_a;
 	setup();
 	stm_setup();
-	script_a.scriptrun = 1;
+	script_a.scriptrun = 0;
+
 	while(1){
+		Vy = 10;
+		HAL_Delay(10000);
+		Vy = 0.0;
+		HAL_Delay(100000);
 		pusher_A.distence();
 		pusher_B.distence();
 		script();
@@ -43,15 +51,17 @@ void stm_setup(void){
 	DC_motor_init();
 }
 
-int count;
 
-void callback(const std_msgs::Int64 &msg)
+void callback(const geometry_msgs::Twist &msg)
 {
-   count = msg.data;
+	aaaaa ++;
+   Vx = msg.linear.x;
+   Vy = msg.linear.y;
+   W = msg.angular.z;
 }
 
 ros::NodeHandle nh;
-ros::Subscriber<std_msgs::Int64> sub("counting", callback);
+ros::Subscriber<geometry_msgs::Twist> sub("cmd_vel", callback);
 
 
 /* UART Communication */
@@ -77,7 +87,7 @@ static void MX_USART1_UART_Init(void)
 
   /* USER CODE END USART1_Init 1 */
   huart1.Instance = USART1;
-  huart1.Init.BaudRate = 115200;
+  huart1.Init.BaudRate = 57600;
   huart1.Init.WordLength = UART_WORDLENGTH_8B;
   huart1.Init.StopBits = UART_STOPBITS_1;
   huart1.Init.Parity = UART_PARITY_NONE;
@@ -112,8 +122,6 @@ static void MX_USART1_UART_Init(void)
 void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart){
     if(huart == &huart1){
     // set velocity 0 before uart reinitialization
-    	count = 0;
-
 		HAL_UART_DeInit(&huart1);
 		MX_USART1_UART_Init();
 		nh.getHardware()->init();
@@ -132,5 +140,6 @@ void setup(void)
 }
 void loop(void)
 {
+//	aaaaa++;
     nh.spinOnce();
 }

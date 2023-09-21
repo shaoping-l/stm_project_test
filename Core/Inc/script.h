@@ -22,6 +22,8 @@ extern double Vy;
 extern double W;
 extern int delay;
 extern int delay_start;
+extern int delay_2;
+extern int delay_start_2;
 
 
 #endif /* INC_SCRIPT_H_ */

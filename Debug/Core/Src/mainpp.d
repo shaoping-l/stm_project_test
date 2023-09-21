@@ -41,7 +41,8 @@ Core/Src/mainpp.o: ../Core/Src/mainpp.cpp ../Core/Inc/mainpp.h \
  ../Core/Inc/STM32Hardware.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32H7xx_hal.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32H7xx_hal_uart.h \
- ../Core/Inc/std_msgs/Int64.h ../Core/Inc/STM32Hardware.h
+ ../Core/Inc/geometry_msgs/Twist.h ../Core/Inc/geometry_msgs/Vector3.h \
+ ../Core/Inc/STM32Hardware.h
 ../Core/Inc/mainpp.h:
 ../Core/Inc/pusher.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
@@ -95,5 +96,6 @@ Core/Src/mainpp.o: ../Core/Src/mainpp.cpp ../Core/Inc/mainpp.h \
 ../Core/Inc/STM32Hardware.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32H7xx_hal.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32H7xx_hal_uart.h:
-../Core/Inc/std_msgs/Int64.h:
+../Core/Inc/geometry_msgs/Twist.h:
+../Core/Inc/geometry_msgs/Vector3.h:
 ../Core/Inc/STM32Hardware.h:

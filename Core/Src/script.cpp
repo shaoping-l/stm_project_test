@@ -6,8 +6,10 @@
  */
 #include "script.h"
 #include "pusher.h"
+#include "servo.h"
 
 SCRIPT script_a;
+SCRIPT script_b;
 //extern PUSHER pusher_A;
 //extern PUSHER pusher_B;
 //extern PUSHER pusher_C;
@@ -21,7 +23,7 @@ void script(){
 		}
 		if(delay == 250 && delay_start == 1){
 //			script_wheel(0,0,0);
-			script_pusher(11,5);
+			script_pusher(12,5);
 			delay_start = 2;
 		}
 		if(delay == 550 && delay_start == 2){
@@ -68,10 +70,40 @@ void script(){
 //		}
 		if(delay == 2500 && delay_start == 8){
 			script_wheel(0,0,0);
-			script_pusher(-2,0);
+			script_pusher(-2,12);
 			delay_start = 0;
 			script_a.scriptrun = 0;
 			delay = 0;
+		}
+	}
+	if(script_b.scriptrun == 1){
+		if(delay_start_2 == 0){
+			script_pusher(12,12);
+//			script_wheel(10,0,0);
+			UART_Send_SetMotorPosition(1, 850, 300);
+			UART_Send_SetMotorPosition(3, 1650, 300);
+			delay_start_2 =1;
+		}
+		if(delay_2 == 1300 && delay_start_2 == 1){
+			UART_Send_SetMotorPosition(1, 1300, 1000);
+			UART_Send_SetMotorPosition(3, 1200, 1000);
+//			script_wheel(0,0,0);
+			script_pusher(-2,12);
+			delay_start_2 =2;
+		}
+		if(delay_2 == 1900 && delay_start_2 == 2){
+//			UART_Send_SetMotorPosition(1, 1300, 300);
+//			script_wheel(10,0,0);
+//			script_pusher(-2,12);
+			delay_start_2 =3;
+		}
+		if(delay_2 == 2400 && delay_start_2 == 3){
+			UART_Send_SetMotorPosition(1, 1550, 500);
+			UART_Send_SetMotorPosition(3, 950, 500);
+			script_wheel(0,0,0);
+			delay_start_2 =0;
+			script_b.scriptrun =0;
+			delay_2 = 0;
 		}
 	}
 

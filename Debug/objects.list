@@ -8,6 +8,7 @@
 "./Core/Src/mainpp.o"
 "./Core/Src/pusher.o"
 "./Core/Src/script.o"
+"./Core/Src/servo.o"
 "./Core/Src/stm32h7xx_hal_msp.o"
 "./Core/Src/stm32h7xx_it.o"
 "./Core/Src/syscalls.o"
